@@ -1,7 +1,0 @@
-C:\Users\alec\Source\Repos\ModCommander\ModCommander\ModCommander.Utils.Test\bin\Debug\ModCommander.Utils.Test.dll
-C:\Users\alec\Source\Repos\ModCommander\ModCommander\ModCommander.Utils.Test\bin\Debug\ModCommander.Utils.Test.pdb
-C:\Users\alec\Source\Repos\ModCommander\ModCommander\ModCommander.Utils.Test\bin\Debug\ModCommander.Utils.dll
-C:\Users\alec\Source\Repos\ModCommander\ModCommander\ModCommander.Utils.Test\bin\Debug\ModCommander.Utils.pdb
-C:\Users\alec\Source\Repos\ModCommander\ModCommander\ModCommander.Utils.Test\obj\Debug\ModCommander.Utils.Test.csprojResolveAssemblyReference.cache
-C:\Users\alec\Source\Repos\ModCommander\ModCommander\ModCommander.Utils.Test\obj\Debug\ModCommander.Utils.Test.dll
-C:\Users\alec\Source\Repos\ModCommander\ModCommander\ModCommander.Utils.Test\obj\Debug\ModCommander.Utils.Test.pdb
