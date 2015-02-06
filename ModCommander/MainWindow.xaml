@@ -1,0 +1,104 @@
+﻿<metro:MetroWindow x:Class="ModCommander.MainWindow"
+        xmlns:metro="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:view="clr-namespace:ModCommander.View"       
+        xmlns:crtl="clr-namespace:ModCommander.Controls"
+        xmlns:Behaviours="clr-namespace:MahApps.Metro.Behaviours;assembly=MahApps.Metro"
+        Title="{Binding Title}" Height="800" Width="1024" >
+    <i:Interaction.Behaviors>
+        <!--<Behaviours:BorderlessWindowBehavior EnableDWMDropShadow="True" ResizeWithGrip="True"  />-->
+    </i:Interaction.Behaviors>
+    <metro:MetroWindow.Resources>
+        
+    </metro:MetroWindow.Resources>
+    <crtl:ModalContentPresenter IsModal="{Binding IsVersionSelectModalDialogVisible}" OverlayBrush="{Binding Background, RelativeSource={RelativeSource AncestorType=metro:MetroWindow, Mode=FindAncestor}, UpdateSourceTrigger=PropertyChanged}">
+        <crtl:ModalContentPresenter.Content>
+            <metro:MetroAnimatedSingleRowTabControl>
+                <metro:MetroAnimatedSingleRowTabControl.Items>
+                    <metro:MetroTabItem Header="PROFILE">
+                        <view:ProfileListView />
+                    </metro:MetroTabItem>
+                    <metro:MetroTabItem Header="LOKAL" >
+                        <view:LocalModsView />
+                    </metro:MetroTabItem>
+                    <metro:MetroTabItem Header="SERVER" >
+                        <TextBlock Text="456" HorizontalAlignment="Stretch" Background="Beige" />
+                    </metro:MetroTabItem>
+                </metro:MetroAnimatedSingleRowTabControl.Items>
+            </metro:MetroAnimatedSingleRowTabControl>
+        </crtl:ModalContentPresenter.Content>
+        <crtl:ModalContentPresenter.ModalContent>
+            <Grid Margin="0 10 0 0" Width="600" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" MinHeight="20" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="400" />
+                </Grid.RowDefinitions>
+                <TextBlock
+                    Grid.Row="0"
+                    Margin="0 5 0 0"
+                    FontSize="26"
+                    Text="Hallo!"
+                    TextWrapping="Wrap"
+                    Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=metro:MetroWindow, Mode=FindAncestor}, UpdateSourceTrigger=PropertyChanged}" />
+                <TextBlock
+                    Grid.Row="1"
+                    Margin="5"
+                    FontSize="15"
+                    Text="Für welche 'Landwirtschafts Simulator'-Version möchtest du deine Mods organisieren?"
+                    TextWrapping="Wrap"
+                    Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=metro:MetroWindow, Mode=FindAncestor}, UpdateSourceTrigger=PropertyChanged}" />
+                <StackPanel Grid.Row="2"  Margin="5" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Button Width="54" Height="54" Margin="5" 
+                            Content="LS 11" 
+                            Command="{Binding VersionSelectCommand}" 
+                            CommandParameter="11" 
+                            Style="{DynamicResource MetroCircleButtonStyle}" />
+                    <Button Width="54" Height="54" Margin="5" 
+                            Content="LS 13" Command="{Binding VersionSelectCommand}" 
+                            CommandParameter="13" 
+                            Style="{DynamicResource MetroCircleButtonStyle}" />
+                    <Button Width="54" Height="54" Margin="5" 
+                            Content="LS 15" 
+                            Command="{Binding VersionSelectCommand}" 
+                            CommandParameter="15" 
+                            Style="{DynamicResource MetroCircleButtonStyle}"
+                            IsEnabled="False"/>
+                </StackPanel>
+                <Grid Grid.Row="3" Width="500" Height="Auto" VerticalAlignment="Center" HorizontalAlignment="Center" >
+                    <Grid.Resources>
+                        <GridLength x:Key="rowHeight">32</GridLength>
+                    </Grid.Resources>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="180" />
+                        <ColumnDefinition Width="*" />                        
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="{StaticResource rowHeight}" />
+                        <RowDefinition Height="{StaticResource rowHeight}" />
+                        <RowDefinition Height="{StaticResource rowHeight}" />
+                        <RowDefinition Height="{StaticResource rowHeight}" />                     
+                    </Grid.RowDefinitions>
+
+                    <Label Grid.Column="0" Grid.Row="0" 
+                           Margin="3" Content="Version" VerticalAlignment="Center" />
+                    <TextBlock Grid.Column="1" Grid.Row="0" 
+                               Margin="3" VerticalAlignment="Center" Text="{Binding Version, UpdateSourceTrigger=PropertyChanged}" />
+
+                    <Label Grid.Column="0" Grid.Row="1"
+                           Margin="3" VerticalAlignment="Center" Content="Original Downloadlink" />
+                    <TextBlock Grid.Column="1" Grid.Row="1" 
+                               Margin="3" VerticalAlignment="Center"><Hyperlink NavigateUri="http://www.modhoster.de/mods/modcommander">Mod Commanders's profile on modhoster.de</Hyperlink></TextBlock>
+
+                    <Label Grid.Column="0" Grid.Row="2" 
+                           Margin="3" VerticalAlignment="Center" Content="Developer" />
+                    <TextBlock Grid.Column="1" Grid.Row="2" 
+                               Margin="3" VerticalAlignment="Center"><Hyperlink NavigateUri="http://www.modhoster.de/community/user/ec8or">ec8or's profile on modhoster.de</Hyperlink></TextBlock>
+                </Grid>
+            </Grid>
+        </crtl:ModalContentPresenter.ModalContent>
+    </crtl:ModalContentPresenter>
+</metro:MetroWindow>
