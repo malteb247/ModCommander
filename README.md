@@ -4,6 +4,6 @@ This is a tool for the Game Farming Simulator. It supports 11-15. With the help 
 Maybe you know me as [ec8or](http://www.modhoster.com/users/ec8or) from Modhoster.
 
 # History
-This old application can be downloaded from [Modhoster](http://www.modhoster.com/mods/mod-commander).
+The old release can be downloaded from [Modhoster](http://www.modhoster.com/mods/mod-commander).
 
 
